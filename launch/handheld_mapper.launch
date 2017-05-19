@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- Uses rtabmap_ros to create maps using handheld RGB-D sensor -->
+  <include file="$(find rtabmap_ros)/launch/rgbd_mapping.launch">
+    <arg name="rviz" value="false" />
+  </include>
+
+</launch>

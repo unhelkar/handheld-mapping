@@ -28,10 +28,15 @@ catkin_make
 
 ## Usage
 
-- Launch handheld mapping
+- Launch RGB-D sensor
 ```
-roslaunch handheld_mapping kinect_mapper.launch (To use Kinect)
-roslaunch handheld_mapping xtion_mapper.launch (To use Xtion)
+roslaunch openni_launch openni.launch depth_registration:=true (To use Kinect)
+roslaunch openni2_launch openni2.launch depth_registration:=true (To use Xtion)
+```
+
+- Launch handheld mapping (Note this should be launched once the RGB-D sensor is up and running. To ensure visual odometry is possible, please launch this in an area where sufficient features are available within the depth range of the RGB-D sensor.) 
+```
+roslaunch handheld_mapping handheld_mapper.launch
 ```
 
 - (Optional) Launch rviz visualization
